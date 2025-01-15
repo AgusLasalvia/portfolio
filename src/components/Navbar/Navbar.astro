@@ -1,0 +1,51 @@
+---
+import planetIcon from '../../../public/planet.svg'
+---
+<header>
+  <div class="navbar">
+    <img src={planetIcon.src} alt="Planet Icon">
+    <nav> 
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+   </div>
+</header>
+
+<style>
+  
+  header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  img{
+    width: 70px;
+    height: 67px;
+  }
+  
+  .navbar{
+    width: 100%;
+    max-width: 1819px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+  }
+
+  nav{
+    padding-right: 40px;
+  }
+  
+  a{
+    margin-left: 50px;
+    font-weight: 400;
+    text-decoration: none;
+    color: black;
+    font-style: bold;
+  }
+
+
+</style>
