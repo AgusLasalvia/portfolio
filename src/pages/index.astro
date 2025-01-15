@@ -1,0 +1,48 @@
+---
+
+import Layout from '../layouts/Layout.astro';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+  <section class="hero flex">
+    <h1>Hi, I’m Agustín <br> I’m a <span>Web Developer</span></h1>
+    <figure><img src="/public/profile.jpg" alt=""></figure>
+  </section>
+</Layout>
+
+
+<style>
+
+  section{
+    padding: 20px;
+  }
+
+  .flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero{
+    height: 90vh;
+    gap: 100px;
+  }
+  .hero span{
+    color: #F27445;
+   
+  }
+
+  .hero h1{
+    font-size: 80px;
+    text-align: start;
+  }
+
+  
+  
+  .hero img{
+    width: 667px;
+    height: 677px;
+    border-radius: 90%;
+  }
