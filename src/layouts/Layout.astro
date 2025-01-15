@@ -1,5 +1,5 @@
 ---
-import Navbar from "../components/Navbar/Navbar.astro"
+import Navbar from "../components/Navbar.astro";
 ---
 
 <!doctype html>
@@ -7,36 +7,41 @@ import Navbar from "../components/Navbar/Navbar.astro"
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-    <!--<link rel="icon" type="image/svg+xml" href="/planet.svg" />--> 
-    <meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/planet.svg" />
+		<meta name="generator" content={Astro.generator} />
 		<title>My Portfolio</title>
 	</head>
 	<body>
-    <Navbar/>
+		<Navbar />
 		<slot />
 	</body>
 </html>
 
-<style>
-  @font-face {
-  font-family: "Cascadia Code";
-  src: url(/Fonts/CascadiaCode.woff2);
-  }
-  *{
-    font-family: "Cascadia Code";
-  }
+<style is:global>
+	:root {
+		--white: #iffffff;
+		--orange: #f27445;
+	}
+	@font-face {
+		font-family: "Cascadia Code";
+		src: url(/Fonts/CascadiaCode.woff2);
+	}
 
-  html,
+	* {
+		font-family: "Cascadia Code";
+	}
+
+	html,
 	body {
 		margin: 0;
 		width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
+		/*height: 100%;*/
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
 
-  body{
-    max-width: 1819px;
-  }
+	body {
+		max-width: 1719px;
+	}
 </style>

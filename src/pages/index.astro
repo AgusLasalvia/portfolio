@@ -1,48 +1,127 @@
 ---
+import Layout from "../layouts/Layout.astro";
 
-import Layout from '../layouts/Layout.astro';
+import Github from "../components/icons/Github.astro";
+import LinkedIn from "../components/icons/LinkedIn.astro";
+import Mail from "../components/icons/Mail.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-  <section class="hero flex">
-    <h1>Hi, I’m Agustín <br> I’m a <span>Web Developer</span></h1>
-    <figure><img src="/public/profile.jpg" alt=""></figure>
-  </section>
+	<section class="hero flex">
+		<h1>
+			Hi, I’m Agustín <br />
+			I’m a <span>Web Developer</span>
+
+			<p>
+				Focused mostly on <span> Back-End</span> development, I create scalable,
+				client-focused services to deliver efficient and reliable solutions
+			</p>
+		</h1>
+		<figure><img src="/profile.jpg" alt="" /></figure>
+	</section>
+
+	<section id="about">
+		<h2>About Me</h2>
+
+		<p>
+			I am currently pursuing a degree in Software Development, with a focus on
+			backend development, as I enjoy challenges and problem-solving. However, I
+			am also starting to explore the world of frontend development.
+		</p>
+		<p>
+			I am a calm and team-oriented individual who loves collaborating,
+			listening to different ideas and implementation plans to deliver a quality
+			product to users, ensuring a unique experience.
+		</p>
+		<p>
+			<strong>Some of the tools and technologies I work with include:</strong
+			><br />JavaScript/TypeScript, MySQL, Node.js, CSS, HTML, C#, and Python.
+		</p>
+
+		<p>
+			If you like my skills or want to talk,<br />check out my LinkedIn or send
+			me an email
+		</p>
+		<ul>
+			<a href="https://github.com/AgusLasalvia"><Github /></a>
+			<a href="https://www.linkedin.com/in/agustin-lasalvia/"><LinkedIn /></a>
+			<a href="mailto:agus.blumenfeld13@gmail.com"><Mail /></a>
+		</ul>
+	</section>
 </Layout>
 
-
 <style>
+	section {
+		margin: 30px;
+		padding: 10px;
+		width: 100%;
+		/*margin: 200px 0 !important; */
+		height: 90vh;
+	}
 
-  section{
-    padding: 20px;
-  }
+	section h2 {
+		color: var(--orange);
+		font-size: 40px;
+	}
 
-  .flex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .hero{
-    height: 90vh;
-    gap: 100px;
-  }
-  .hero span{
-    color: #F27445;
-   
-  }
+	.flex {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.hero {
+		gap: 100px;
+	}
+	.hero span {
+		color: #f27445;
+	}
 
-  .hero h1{
-    font-size: 80px;
-    text-align: start;
-  }
+	.hero h1 {
+		font-size: 60px;
+		text-align: start;
+		margin: 0 20px;
+	}
 
-  
-  
-  .hero img{
-    width: 667px;
-    height: 677px;
-    border-radius: 90%;
-  }
+	.hero p {
+		font-size: 25px;
+	}
+
+	.hero img {
+		width: 667px;
+		height: 677px;
+		border-radius: 90%;
+	}
+
+	#about {
+		display: flex;
+		flex-direction: column;
+
+		/*justify-content:space-around;*/
+	}
+	#about p {
+		font-size: 22px;
+		max-width: 1219;
+		margin: 20 0;
+	}
+
+	#about ul {
+		display: flex;
+		align-items: center;
+		justify-content: start;
+		padding: 0;
+	}
+	#about a {
+		margin: 10px;
+		margin-top: 30px;
+		color: black;
+		width: 40px;
+		transition: color 0.5s;
+	}
+
+	#about a:hover {
+		color: var(--orange);
+	}
+</style>
