@@ -1,12 +1,31 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 
 import Github from "../components/icons/Github.astro";
 import LinkedIn from "../components/icons/LinkedIn.astro";
 import Mail from "../components/icons/Mail.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const projects = [
+	{
+		href: "https://quitelcongress-showcase.netlify.app/",
+		codeHref: "",
+		title: "Quitel 2023",
+		img: "/quitel",
+		description:
+			"XLVI International Congress of Theoretical Chemists of Latin Expression.",
+		alt: "Quitel 2023",
+	},
+	{
+		href: "https://sorvislater.netlify.app/login",
+		codeHref: "",
+		title: "SorvisLater",
+		img: "/sorvis",
+		description:
+			"Ticket solution based on ServiceNow but for Minecraft Servers",
+		alt: "SorvisLater",
+	},
+];
 ---
 
 <Layout>
@@ -51,6 +70,20 @@ import Mail from "../components/icons/Mail.astro";
 			<a href="mailto:agus.blumenfeld13@gmail.com"><Mail /></a>
 		</ul>
 	</section>
+
+	<section id="projects">
+		<h2>Projects</h2>
+		<p>
+			At this moment, I have this two top projects that I made in this couple of
+			years <br />
+			<strong>Take a Look</strong>
+		</p>
+		{
+			projects.map((item, key) => {
+				return <ProjectCard project={item} />;
+			})
+		}
+	</section>
 </Layout>
 
 <style>
@@ -59,7 +92,7 @@ import Mail from "../components/icons/Mail.astro";
 		padding: 10px;
 		width: 100%;
 		/*margin: 200px 0 !important; */
-		height: 90vh;
+		height: 85vh;
 	}
 
 	section h2 {
@@ -85,7 +118,6 @@ import Mail from "../components/icons/Mail.astro";
 		margin: 0 20px;
 	}
 
-<<<<<<< HEAD
 	.hero p {
 		font-size: 25px;
 	}
@@ -102,7 +134,7 @@ import Mail from "../components/icons/Mail.astro";
 
 		/*justify-content:space-around;*/
 	}
-	#about p {
+	p {
 		font-size: 22px;
 		max-width: 1219;
 		margin: 20 0;
@@ -125,13 +157,9 @@ import Mail from "../components/icons/Mail.astro";
 	#about a:hover {
 		color: var(--orange);
 	}
-=======
-  
-  
-  .hero img{
-    width: 667px;
-    height: 677px;
-    border-radius: 90%;
-}
->>>>>>> refs/remotes/origin/main
+
+	#projects strong {
+		font-size: 30px;
+		color: var(--orange);
+	}
 </style>
