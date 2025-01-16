@@ -29,17 +29,19 @@ const projects = [
 ---
 
 <Layout>
-	<section class="hero flex">
+	<section id="hero">
 		<h1>
 			Hi, I’m Agustín <br />
-			I’m a <span>Web Developer</span>
+			<span>I’m a <strong>Web Developer</strong></span>
 
 			<p>
-				Focused mostly on <span> Back-End</span> development, I create scalable,
+				Focused mostly on <strong> Back-End</strong> development, I create scalable,
 				client-focused services to deliver efficient and reliable solutions
 			</p>
 		</h1>
-		<figure><img src="/profile.jpg" alt="" /></figure>
+		<figure>
+			<img src="/profile.jpg" alt="" />
+		</figure>
 	</section>
 
 	<section id="about">
@@ -79,8 +81,8 @@ const projects = [
 			<strong>Take a Look</strong>
 		</p>
 		{
-			projects.map((item, key) => {
-				return <ProjectCard project={item} />;
+			projects.map((item) => {
+				<ProjectCard project={item} />;
 			})
 		}
 	</section>
@@ -88,56 +90,63 @@ const projects = [
 
 <style>
 	section {
-		margin: 30px;
-		padding: 10px;
-		width: 100%;
-		/*margin: 200px 0 !important; */
-		height: 85vh;
+		height: 90vh;
+		width: 90%;
 	}
 
-	section h2 {
+	h2 {
 		color: var(--orange);
-		font-size: 40px;
+		font-size: 48px;
 	}
 
-	.flex {
+	p {
+		font-size: 24px;
+	}
+
+	#hero {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
-	.hero {
-		gap: 100px;
-	}
-	.hero span {
-		color: #f27445;
-	}
 
-	.hero h1 {
-		font-size: 56px;
-		text-align: start;
-		margin: 0 20px;
-	}
-
-	.hero p {
-		font-size: 25px;
-	}
-
-	.hero img {
-		width: 667px;
-		height: 677px;
-		border-radius: 90%;
-	}
-
-	#about {
+	#hero h1,
+	figure {
+		width: 50%;
 		display: flex;
 		flex-direction: column;
-
-		/*justify-content:space-around;*/
 	}
-	p {
-		font-size: 22px;
-		max-width: 1219;
-		margin: 20 0;
+
+	#hero h1 {
+		font-size: 60px;
+		text-align: start;
+		margin: 0 10px;
+	}
+
+	#hero p {
+		margin-top: 30px;
+		font-size: 24px !important;
+	}
+
+	#hero img {
+		margin-left: 40px;
+		width: 100%;
+		border-radius: 100%;
+	}
+
+	#hero figure {
+		align-items: center;
+	}
+
+	#hero span {
+		width: 100%;
+	}
+
+	#hero strong {
+		color: var(--orange);
+	}
+
+	#about p{
+		margin-top: 50px;
 	}
 
 	#about ul {
@@ -145,23 +154,54 @@ const projects = [
 		align-items: center;
 		justify-content: start;
 		padding: 0;
+		gap: 15px;
 	}
 	#about a {
 		margin: 10px;
 		margin-top: 30px;
 		color: black;
-		width: 40px;
+		width: 50px;
 		transition: color 0.5s;
 	}
 
 	#about a:hover {
 		color: var(--orange);
 	}
-
-	#projects strong {
-		font-size: 30px;
-		color: var(--orange);
+	#projects {
+		display: none;
 	}
 
+	@media screen and (max-width: 904px) {
+		section {
+			width: 90%;
+		}
+		p {
+			font-size: 20px;
+		}
 
+		h2 {
+			font-size: 27px;
+		}
+		#hero {
+			justify-content: center;
+			align-items: center;
+			flex-direction: column-reverse;
+		}
+		#hero img {
+			margin: 0;
+			width: 400px;
+		}
+
+		#hero h1 {
+			font-size: 30px;
+			width: 100%;
+		}
+		#hero p {
+			font-size: 20px !important;
+		}
+
+		#about ul {
+			justify-content: space-around;
+		}
+	}
 </style>

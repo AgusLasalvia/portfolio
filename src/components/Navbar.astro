@@ -6,6 +6,7 @@ import sunIcon from "../../public/sun.svg";
 <header>
 	<div class="navbar">
 		<img src={planetIcon.src} alt="Planet Icon" />
+
 		<nav>
 			<a href="#about">About</a>
 			<a href="#projects">Projects</a>
@@ -31,9 +32,10 @@ import sunIcon from "../../public/sun.svg";
 	}
 
 	.navbar {
+		top: 0;
 		height: 87px;
-		width: 100%;
 		max-width: 1819px;
+		width: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -80,5 +82,12 @@ import sunIcon from "../../public/sun.svg";
 
 	div > img {
 		margin: 0 15px;
+	}
+
+	@media screen and (max-width: 904px) {
+
+		a {
+			display: none;
+		}
 	}
 </style>
