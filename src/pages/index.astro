@@ -11,7 +11,7 @@ const projects = [
 		href: "https://quitelcongress-showcase.netlify.app/",
 		codeHref: "",
 		title: "Quitel 2023",
-		img: "/quitel",
+		img: "/quitel.png",
 		description:
 			"XLVI International Congress of Theoretical Chemists of Latin Expression.",
 		alt: "Quitel 2023",
@@ -20,7 +20,7 @@ const projects = [
 		href: "https://sorvislater.netlify.app/login",
 		codeHref: "",
 		title: "SorvisLater",
-		img: "/sorvis",
+		img: "/sorvis.png",
 		description:
 			"Ticket solution based on ServiceNow but for Minecraft Servers",
 		alt: "SorvisLater",
@@ -76,16 +76,21 @@ const projects = [
 	<section id="projects">
 		<h2>Projects</h2>
 		<p>
-			At this moment, I have this two top projects that I made in this couple of
-			years <br />
+			This are some of my latest projects. <br />
 			<strong>Take a Look</strong>
 		</p>
-		{
-			projects.map((item) => {
-				<ProjectCard project={item} />;
-			})
-		}
+		<div>
+			{
+				projects.map((item) => {
+					return <ProjectCard project={item} />;
+				})
+			}
+		</div>
 	</section>
+
+	<!-- <footer>
+		<p>Thanks for visiting</p>
+	</footer> -->
 </Layout>
 
 <style>
@@ -145,7 +150,7 @@ const projects = [
 		color: var(--orange);
 	}
 
-	#about p{
+	#about p {
 		margin-top: 50px;
 	}
 
@@ -167,13 +172,30 @@ const projects = [
 	#about a:hover {
 		color: var(--orange);
 	}
-	#projects {
-		display: none;
+	#projects div {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap:20px;
+	}
+
+	footer{
+		width: 100%;
+		background-color: var(--orange);
+		border-radius: 10px 10px 0 0;
+		text-align: center;
+		height: 70px;
+		color:white;
+	}
+	
+	footer p{
+		font-size: 20px;
 	}
 
 	@media screen and (max-width: 904px) {
 		section {
 			width: 90%;
+			height: fit-content;
 		}
 		p {
 			font-size: 20px;
@@ -189,7 +211,7 @@ const projects = [
 		}
 		#hero img {
 			margin: 0;
-			width: 400px;
+			width: 190%;
 		}
 
 		#hero h1 {
@@ -203,5 +225,12 @@ const projects = [
 		#about ul {
 			justify-content: space-around;
 		}
+
+		#projects div{
+			flex-direction: column;
+			
+		}
+
+
 	}
 </style>

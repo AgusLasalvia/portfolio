@@ -3,13 +3,73 @@ const { project } = Astro.props;
 ---
 
 <article>
-	<div>
-		<h3>{project.title}</h3>
-		<p>{project.description}</p>
-		<a href={project.href}>Live View</a>
-		<a href={project.codeHref}>Code</a>
-	</div>
+	<h3>{project.title}</h3>
+	<p>{project.description}</p>
+
 	<figure>
 		<img src={project.img} alt={project.alt} />
 	</figure>
+	<div>
+		<a href={project.href}>Live</a>
+		<a href={project.codeHref}>Code</a>
+	</div>
 </article>
+
+<style>
+	article {
+		border-style: solid;
+		border-color: var(--orange);
+		border-radius: 20px;
+		margin-top: 50px;
+		width: 50%;
+		flex-direction: column;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: transform .2s;
+	}
+
+	article:hover{
+		transform: scale(1.03);
+	}
+
+	p {
+		width: 70%;
+	}
+
+	img {
+		width: 100%;
+		border-radius: 10px;
+	}
+
+	div > a {
+		background-color: white;
+		color: var(--orange);
+		border-style: solid;
+		border-color: var(--oranges);
+		border-radius: 10px;
+		width: 100px;
+		text-align: center;
+		text-decoration: none;
+		transition:background-color 1s;
+	}
+
+	div>a:hover{
+		background-color: var(--orange);
+		color:white;
+	}
+	div {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 20px;
+		width: 100%;
+		gap: 40px;
+	}
+
+	@media screen and (max-width: 904px) {
+		article {
+			width: 100%;
+		}
+	}
+</style>
