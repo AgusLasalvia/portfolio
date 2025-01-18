@@ -26,15 +26,16 @@ const { project } = Astro.props;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		transition: transform .2s;
+		transition: transform 0.2s;
 	}
 
-	article:hover{
+	article:hover {
 		transform: scale(1.03);
 	}
 
 	p {
 		width: 70%;
+		text-align: center;
 	}
 
 	img {
@@ -42,8 +43,13 @@ const { project } = Astro.props;
 		border-radius: 10px;
 	}
 
+	h3,
+	p {
+		color: var(--font);
+	}
+
 	div > a {
-		background-color: white;
+		border-radius: var(--background);
 		color: var(--orange);
 		border-style: solid;
 		border-color: var(--oranges);
@@ -51,12 +57,12 @@ const { project } = Astro.props;
 		width: 100px;
 		text-align: center;
 		text-decoration: none;
-		transition:background-color 1s;
+		transition: background-color 1s;
 	}
 
-	div>a:hover{
+	div > a:hover {
 		background-color: var(--orange);
-		color:white;
+		color: var(--background);
 	}
 	div {
 		display: flex;

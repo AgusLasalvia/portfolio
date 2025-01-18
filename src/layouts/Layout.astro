@@ -19,11 +19,19 @@ import Navbar from "../components/Navbar.astro";
 
 <style>
 	:root {
-		
-		--white: #ffffff;
 		--orange: #f27445;
-		--dark-blue:;
-		
+	}
+
+	[data-theme="light"] {
+		--background: white;
+		--font: black;
+		--navbar: #ffeee1;
+	}
+
+	[data-theme="dark"] {
+		--background: #15161c;
+		--font: white;
+		--navbar: #1b1e30;
 	}
 
 	@font-face {
@@ -34,7 +42,6 @@ import Navbar from "../components/Navbar.astro";
 	* {
 		font-family: "Cascadia Code";
 	}
-
 
 	html,
 	body {
@@ -47,6 +54,7 @@ import Navbar from "../components/Navbar.astro";
 	}
 
 	body {
+		background-color: var(--background);
 		width: 100%;
 		max-width: 1600px;
 	}

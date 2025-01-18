@@ -19,6 +19,26 @@ import sunIcon from "../../public/sun.svg";
 	</div>
 </header>
 
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		const THEMES = ["light", "dark"];
+		let currentTheme = localStorage.getItem("theme") || "light";
+		document.documentElement.setAttribute("data-theme", currentTheme);
+
+		const themeToggleButton = document.getElementById("theme-toggle");
+
+		if (themeToggleButton) {
+			themeToggleButton.addEventListener("click", () => {
+				const nextTheme =
+					THEMES[(THEMES.indexOf(currentTheme) + 1) % THEMES.length];
+				document.documentElement.setAttribute("data-theme", nextTheme);
+				localStorage.setItem("theme", nextTheme);
+				currentTheme = nextTheme;
+			});
+		}
+	});
+</script>
+
 <style>
 	header {
 		width: 100%;
@@ -40,7 +60,7 @@ import sunIcon from "../../public/sun.svg";
 		align-items: center;
 		justify-content: space-between;
 		margin: 10px;
-		background-color: #ffeee1;
+		background-color: var(--navbar);
 		border-radius: 20px;
 	}
 
@@ -54,22 +74,19 @@ import sunIcon from "../../public/sun.svg";
 		margin-left: 50px;
 		font-size: 20px;
 		text-decoration: none;
-		color: black;
-		font-style:normal;
-		transition: color .3s;
+		color: var(--font);
+		font-style: normal;
+		transition: color 0.3s;
 	}
 
-	a:hover{
-		color: var(--orange)
+	a:hover {
+		color: var(--orange);
 	}
 
 	#theme-toggle {
 		background: none;
 		border: none;
 		cursor: pointer;
-		/*display: flex;*/
-		/*align-items: center;*/
-		/*justify-content: center;*/
 		padding: 0.5rem;
 		border-radius: 50%;
 		transition: background-color 0.3s;
@@ -90,7 +107,6 @@ import sunIcon from "../../public/sun.svg";
 	}
 
 	@media screen and (max-width: 904px) {
-
 		a {
 			display: none;
 		}
