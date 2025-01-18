@@ -13,7 +13,7 @@ import sunIcon from "../../public/sun.svg";
 			<a href="#experience">Experience</a>
 			<a href="#contact">Contact</a>
 			<button id="theme-toggle">
-				<img src={sunIcon.src} alt="" />
+				<img alt="" />
 			</button>
 		</nav>
 	</div>
@@ -22,11 +22,20 @@ import sunIcon from "../../public/sun.svg";
 <script>
 	document.addEventListener("DOMContentLoaded", () => {
 		const THEMES = ["light", "dark"];
+
+		// Get's current theme from variable on LocalStorage
 		let currentTheme = localStorage.getItem("theme") || "light";
 		document.documentElement.setAttribute("data-theme", currentTheme);
 
 		const themeToggleButton = document.getElementById("theme-toggle");
+		const themeIcon = themeToggleButton?.querySelector("img");
 
+		// Change the icon on init load depending on theme
+		if (themeIcon) {
+			themeIcon.src = currentTheme === "dark" ? "/moon.svg" : "/sun.svg";
+		}
+
+		// If the button exists
 		if (themeToggleButton) {
 			themeToggleButton.addEventListener("click", () => {
 				const nextTheme =
@@ -34,6 +43,11 @@ import sunIcon from "../../public/sun.svg";
 				document.documentElement.setAttribute("data-theme", nextTheme);
 				localStorage.setItem("theme", nextTheme);
 				currentTheme = nextTheme;
+
+				// Change Icon on Click
+				if (themeIcon) {
+					themeIcon.src = currentTheme === "dark" ? "/moon.svg" : "/sun.svg";
+				}
 			});
 		}
 	});
