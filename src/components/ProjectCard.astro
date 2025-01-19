@@ -1,4 +1,15 @@
 ---
+interface Props {
+	project: {
+		title: string;
+		description: string;
+		img: string;
+		alt: string;
+		href: string;
+		codeHref: string;
+	};
+}
+
 const { project } = Astro.props;
 ---
 
@@ -27,28 +38,21 @@ const { project } = Astro.props;
 		justify-content: center;
 		align-items: center;
 		transition: transform 0.2s;
-
-
 	}
 
-	article img{
-
-			transition:
-				transform 0.3s ease,
-				box-shadow 0.3s ease;
-		
+	article img {
+		transition:
+			transform 0.3s ease,
+			box-shadow 0.3s ease;
 	}
 
 	article:hover {
 		transform: scale(1.03);
-	
 	}
 
-	article:hover img{
-
-			box-shadow: 20px -16px var(--orange);
-			transform: scale(1.01);
-		
+	article:hover img {
+		box-shadow: 20px -16px var(--orange);
+		transform: scale(1.01);
 	}
 
 	p {
