@@ -1,13 +1,15 @@
 ---
+interface Project {
+	title: string;
+	description: string;
+	img: string;
+	alt: string;
+	href: string;
+	codeHref: string;
+}
+
 interface Props {
-	project: {
-		title: string;
-		description: string;
-		img: string;
-		alt: string;
-		href: string;
-		codeHref: string;
-	};
+	project: Project;
 }
 
 const { project } = Astro.props;

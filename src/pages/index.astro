@@ -5,6 +5,7 @@ import ProjectCard from "../components/ProjectCard.astro";
 import Github from "../components/icons/Github.astro";
 import LinkedIn from "../components/icons/LinkedIn.astro";
 import Mail from "../components/icons/Mail.astro";
+import ExperienceCard from "../components/ExperienceCard.astro";
 
 const projects = [
 	{
@@ -24,6 +25,27 @@ const projects = [
 		description:
 			"Ticket solution based on ServiceNow but for Minecraft Servers",
 		alt: "SorvisLater",
+	},
+];
+
+const experience = [
+	{
+		rol: "IT Support",
+		company: "UDELAR - Universiada de la Republica",
+		duration: "2021 - current",
+		description:
+			"In charge of properly configure and install the hardware and software on the relevant devices, and configure the software and drivers as necessary. Ensure proper maintenance and repair of all IT equipment and accessories, including routers and printers",
+
+		skills: ["Linux", "Windows", "JavaScript", "Python", "Proxmox"],
+	},
+	{
+		rol: "Back-End Developer",
+		company: "Freelance",
+		duration: "2023 - 2024",
+		description:
+			"Responsible for designing, implementing, maintaining, and updating APIs and the database to ensure the best possible user experience.",
+
+		skills: ["TypeScript", "Express", "Node.Js", "MongoDB"],
 	},
 ];
 ---
@@ -86,6 +108,16 @@ const projects = [
 				})
 			}
 		</div>
+	</section>
+
+	<section id="experience">
+		<h2>Experience</h2>
+
+		{
+			experience.map((item) => {
+				return <ExperienceCard experience={item} />;
+			})
+		}
 	</section>
 
 	<footer>

@@ -1,0 +1,107 @@
+---
+interface Experience {
+	rol: string;
+	company: string;
+	duration: string;
+	description: string;
+	skills: string[];
+}
+
+interface Props {
+	experience: Experience;
+}
+
+const { experience } = Astro.props;
+---
+
+<article>
+	<div>
+		<h3>{experience.rol}</h3>
+		<h4>{experience.company}</h4>
+		<p>{experience.duration}</p>
+		<p>{experience.description}</p>
+	</div>
+	<div>
+		<h3>Skills</h3>
+		<ul>
+			{
+				experience.skills.map((item) => {
+					return <li>{item}</li>;
+				})
+			}
+		</ul>
+	</div>
+</article>
+
+<style>
+	article {
+		width: 100%;
+		display: flex;
+		border-style: solid;
+		border-color: var(--orange);
+		border-radius: 20px;
+		margin-bottom: 25px;
+	}
+
+	article > div {
+		width: 50%;
+		margin-left: 20px;
+	}
+
+	[data-theme="dark"] article {
+		background-color: var(--navbar);
+	}
+
+	[data-theme="light"] article {
+		background-color: white;
+	}
+
+	h3 {
+		font-size: 24px;
+		color: var(--orange);
+		text-align: center;
+	}
+
+	h4,
+	p {
+		color: var(--font);
+	}
+
+	h4 {
+		font-size: 22px;
+	}
+
+	p {
+		font-size: 20px;
+	}
+
+	ul {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		max-height: 250px;
+		list-style-type: disc;
+	}
+	li {
+		margin-top: 10px;
+		font-size: 20px;
+		color: var(--font);
+	}
+
+	li::marker {
+		color: var(--orange);
+		font-size: 30px;
+	}
+
+	@media screen and (max-width: 904px) {
+		article {
+			flex-direction: column;
+			/* justify-content: center; */
+			align-items: center;
+		}
+
+		article > div {
+			width: 90%;
+		}
+	}
+</style>
