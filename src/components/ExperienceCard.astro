@@ -41,6 +41,11 @@ const { experience } = Astro.props;
 		border-color: var(--orange);
 		border-radius: 20px;
 		margin-bottom: 25px;
+		transition: transform 0.2s;
+	}
+
+	article:hover {
+		transform: scale(1.03);
 	}
 
 	article > div {
