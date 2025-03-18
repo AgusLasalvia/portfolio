@@ -33,7 +33,6 @@ const { experience } = Astro.props;
 	</div>
 </article>
 
-
 <style>
 	article {
 		width: 100%;
@@ -55,8 +54,6 @@ const { experience } = Astro.props;
 		width: 50%;
 		margin-left: 20px;
 	}
-
-
 
 	h3 {
 		font-size: 24px;
@@ -104,7 +101,7 @@ const { experience } = Astro.props;
 
 		article > div {
 			width: 90%;
-			margin:0;
+			margin: 0;
 		}
 
 		ul {
@@ -126,26 +123,20 @@ const { experience } = Astro.props;
 		}
 
 		li {
-			font-size: 20px;
+			font-size: 19px;
 			color: var(--font);
 			text-align: center;
 		}
 
 		li::marker {
 			color: var(--orange);
-			font-size: 30px;
+			font-size: 25px;
+			margin-right: 0;
 		}
 
 		ul li:nth-child(5) {
 			grid-column: span 2;
 			text-align: center;
 		}
-
-
-
-
-
-
-
 	}
 </style>
