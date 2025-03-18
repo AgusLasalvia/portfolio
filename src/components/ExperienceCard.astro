@@ -33,6 +33,7 @@ const { experience } = Astro.props;
 	</div>
 </article>
 
+
 <style>
 	article {
 		width: 100%;
@@ -105,5 +106,46 @@ const { experience } = Astro.props;
 			width: 90%;
 			margin:0;
 		}
+
+		ul {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 10px;
+			list-style-type: none;
+			padding: 0;
+			height: 100%;
+			max-height: 250px;
+		}
+
+		ul {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			list-style-type: disc;
+			list-style-position: inside;
+			max-height: 250px;
+		}
+
+		li {
+			font-size: 20px;
+			color: var(--font);
+			text-align: center;
+		}
+
+		li::marker {
+			color: var(--orange);
+			font-size: 30px;
+		}
+
+		ul li:nth-child(5) {
+			grid-column: span 2;
+			text-align: center;
+		}
+
+
+
+
+
+
+
 	}
 </style>
