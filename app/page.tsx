@@ -29,30 +29,30 @@ const experience = [
 
 export default function Home() {
 	return (
-		<div className=" flex justify-center flex-col items-center">
+		<div className=" flex justify-center flex-col items-center ">
 			{/* About me About */}
 			<ContentSection title="" id="">
-				<div className="flex flex-col justify-center items-center md:justify-start md:flex-row md:items-start w-[70%]  text-white ">
+				<div className="flex flex-col justify-center items-center md:justify-start md:flex-row md:items-start w-[80%]  text-white ">
 					<Image
 						src="/profile.jpg"
 						alt="Profile Picture"
-						width={100}
-						height={100}
-						className=" rounded-full" />
+						width={150}
+						height={150}
+						className=" rounded-2xl" />
 					<div className=" flex flex-col h-full justify-center ml-5">
-						<p className=" font-bold text-2xl">Agustin Lasalvia</p>
-						<p className=" text-gray-400">Full Stack Developer</p>
-						<p className=" text-gray-400"><Image className=" text-amber-100 !important" src="/pin.png" alt="Location" width={20} height={20} />Montevideo - Uruguay</p>
+						<p className="font-bold text-2xl text-center md:text-start">Agustin Lasalvia</p>
+						<p className=" text-gray-400 text-center md:text-start">Full Stack Developer</p>
+						<p className=" text-gray-400 text-center md:text-start">Montevideo - Uruguay</p>
 					</div>
 				</div>
-				<p className="text-white w-[70%] mt-5">I m a Junior Full-Stack Developer with a passion for creating and solving problems, located at Montevideo - Uruguay.
+				<p className="text-white  mt-5 text-center w-[90%] md:w-[80%] md:text-start ">I m a Junior Full-Stack Developer with a passion for creating and solving problems,
 					Ready for new adventures!
 				</p>
-				<div className="flex gap-5 mt-5 justify-center  w-[70%] md:justify-start">
+				<div className="flex gap-10 mt-5 justify-center w-[80%] md:justify-start">
 					{social.map((link) => {
 						return (
-							<a href={link.href} className="text-white hover:text-gray- transition-all transform hover:scale-150 " key={link.icon}>
-								<i className={link.icon}></i>
+							<a href={link.href} className="text-white hover:text-blue-800 transition-all transform hover:scale-150 " key={link.icon}>
+								<i className={link.icon}/>
 							</a>
 						)
 					})}
@@ -61,7 +61,7 @@ export default function Home() {
 
 			{/* Skills */}
 			<ContentSection title="Skills" id="skills">
-				<div className="grid md:grid-cols-2 md:w-[70%] w-full mb-10 gap-3 justify-center">
+				<div className="grid md:grid-cols-2 md:w-[70%] w-[80%] mb-10 gap-5">
 					{skills.map((skill) => {
 						return (
 							<SkillCard key={skill.title} type={skill.title} description={skill.description} icon={skill.icon} />
@@ -80,6 +80,10 @@ export default function Home() {
 				})}
 			</ContentSection>
 			{/* Projects */}
+
+			<ContentSection title="Projects" id="projects">
+				<></>
+			</ContentSection>
 		</div>
 	);
 }
