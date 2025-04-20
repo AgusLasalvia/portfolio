@@ -2,7 +2,6 @@ import ContentSection from "@/components/ContentSection";
 import ExperienceCard from "@/components/ExperienceCard";
 import SkillCard from "@/components/SkillCard";
 import Image from "next/image";
-import { title } from "process";
 
 const social = [
 	{ icon: "fa-brands fa-linkedin-in fa-xl", href: "https://www.linkedin.com/in/agustin-lasalvia/" },
@@ -47,7 +46,7 @@ export default function Home() {
 						<p className=" text-gray-400"><Image className=" text-amber-100 !important" src="/pin.png" alt="Location" width={20} height={20} />Montevideo - Uruguay</p>
 					</div>
 				</div>
-				<p className="text-white w-[70%] mt-5">I'm a Junior Full-Stack Developer with a passion for creating and solving problems, located at Montevideo - Uruguay.
+				<p className="text-white w-[70%] mt-5">I’m a Junior Full-Stack Developer with a passion for creating and solving problems, located at Montevideo - Uruguay.
 					Ready for new adventures!
 				</p>
 				<div className="flex gap-5 mt-5 justify-center  w-[70%] md:justify-start">
