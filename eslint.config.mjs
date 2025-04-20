@@ -1,23 +1,18 @@
-import eslintPluginReact from 'eslint-plugin-react';
-import eslintPluginNext from '@next/eslint-plugin-next';
-import eslintPluginTs from '@typescript-eslint/eslint-plugin';
+import { FlatCompat } from '@eslint/eslintrc'
 
-export default [
-  {
-    plugins: {
-      react: eslintPluginReact,
-      '@next/next': eslintPluginNext,
-      '@typescript-eslint': eslintPluginTs
-    },
-    rules: {
-      // 💬 Apaga la advertencia sobre fuentes personalizadas
-      '@next/next/no-page-custom-font': 'off',
+const compat = new FlatCompat({
+	// import.meta.dirname is available after Node.js v20.11.0
+	baseDirectory: import.meta.dirname,
+})
 
-      // 💬 Permite usar comillas simples sin escapar en JSX
-      'react/no-unescaped-entities': 'off',
+const eslintConfig = [
+	...compat.config({
+		extends: ['next'],
+		rules: {
+			'react/no-unescaped-entities': 'off',
+			'@next/next/no-page-custom-font': 'off',
+		},
+	}),
+]
 
-      // 💬 Opcional: Ignora vars no usadas si empiezan con "_"
-      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }]
-    }
-  }
-];
+export default eslintConfig
