@@ -25,3 +25,22 @@ body {
 	color: var(--foreground);
 	font-family: "Lato";
 }
+
+.stars {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 2px 2px;
+  animation: twinkling 20s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes twinkling {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1000px 1000px;
+  }
+}
