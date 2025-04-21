@@ -6,7 +6,7 @@ const links = [
 
 export default function Navbar() {
 	return (
-		<nav className="fixed top-4  z-50 w-[90%] max-w-2xl mx-auto h-14 px-6 flex items-center justify-center bg-black/50 backdrop-blur-md border border-blue-900 rounded-full shadow-md">
+		<nav className="fixed top-4  z-50 w-[90%] max-w-2xl mx-auto h-14 px-6 flex items-center justify-center bg-gray/50 border-1 border-gray-900 backdrop-blur-md rounded-full shadow-md">
 
 			<ul className="flex gap-8">
 				{links.map((link) => (
