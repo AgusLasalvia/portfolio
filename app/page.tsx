@@ -25,7 +25,7 @@ const skills = [
 
 const experience = [
 	{ role: "IT Technician", company: "UDELAR", period: "2021 - Present", location: "Montevideo - Uruguay", description: "Responsibilities. Properly configure and install the hardware and software on the relevant devices, and configure the software and drivers as necessary. Ensure proper maintenance and repair of all IT equipment and accessories, including routers and printers, etc. " },
-	{ role: "Backend Developer", company: "Freelance", period: "2023 - 2024", location: "Montevideo - Uruguay", description: "Responsible for the design, development, implementation, and updating of various backend systems.Utilized development tools and programming languages such as Node.js for backend logic and MongoDB for data storage, including proper data validation." }
+	{ role: "Backend Developer", company: "Freelance", period: "2023", location: "Montevideo - Uruguay", description: "Responsible for the design, development, implementation, and updating of various backend systems.Utilized development tools and programming languages such as Node.js for backend logic and MongoDB for data storage, including proper data validation." }
 ]
 
 const projects = [
@@ -36,7 +36,17 @@ const projects = [
 		stack: ["React", "NodeJS", "MongoDB", "Typescript"],
 		github: "https://github.com/AgusLasalvia/Congress-2023",
 		demo: "https://quitelcongress-showcase.netlify.app/",
-		className: null
+		status: "Finished"
+	}
+	,
+	{
+		title: "SorvisLater",
+		description: "",
+		image: "/sorvis.png",
+		stack: ["NodeJS", "Supabase", "Express", "Typescript", "Prisma"],
+		github: "https://github.com/AgusLasalvia/SorviceLater",
+		demo: "https://sorvislater.netlify.app/login",
+		status: "Finished"
 	},
 	{
 		title: "Recisaver App",
@@ -45,17 +55,16 @@ const projects = [
 		stack: ["React Native", "Expo", "Reanimated", "Typescript"],
 		github: "https://github.com/AgusLasalvia/recisaver-app",
 		demo: "",
-		className: null
+		status: "Progress"
 	},
 	{
 		title: "Recisaver Server",
 		description: "",
-		image: "/recisaver.png",
-		stack: ["NodeJS", "Supabase", "Express", "Typescript", "Prisma"],
+		image: "/github.png",
+		stack: ["NodeJS", "Supabase","SQL", "Express", "Typescript", "Prisma"],
 		github: "https://github.com/AgusLasalvia/recisaver-server",
-		demo: "",
-		className: "md:col-span-2 md:row-span-2 w-full"
-
+		demo:"",
+		status: "Progress"
 	}
 ]
 
@@ -122,7 +131,7 @@ export default function Home() {
 					{projects.map((project) => {
 
 						return (
-							<ProjectCard key={project.title} title={project.title} description={project.description} image={project.image} stack={project.stack} github={project.github} demo={project.demo} />
+							<ProjectCard key={project.title} title={project.title} description={project.description} image={project.image} stack={project.stack} github={project.github} demo={project.demo} status={project.status} />
 						)
 					})}
 				</div>
