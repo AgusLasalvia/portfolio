@@ -1,22 +1,26 @@
 const links = [
-	{ href: "/", label: "About", icon: "" },
-	{ href: "#projects", label: "Projects", icon: "" },
-	{ href: "#experience", label: "Experience", icon: "" }
-]
-
-// Change UI Soon as possible
+	{ href: "/", label: "About" },
+	{ href: "#projects", label: "Projects" },
+	{ href: "#experience", label: "Experience" }
+];
 
 export default function Navbar() {
 	return (
-		<nav className="flex justify-center w-full">
-			<div className="flex items-center justify-center gap-[25%] w-[58%] mt-2 rounded h-[40px] max-w-[700px] border-b-1 border-white">
-				{links.map((link) => (
-					<a key={link.label} href={link.href} className="text-white hover:text-gray-700">
-						{link.label}
-					</a>
-				))}
-			</div>
-		</nav>
-	)
+		<nav className="fixed top-4  z-50 w-[90%] max-w-2xl mx-auto h-14 px-6 flex items-center justify-center bg-black/50 backdrop-blur-md border border-blue-900 rounded-full shadow-md">
 
-};
+			<ul className="flex gap-8">
+				{links.map((link) => (
+					<li key={link.label}>
+						<a
+							href={link.href}
+							className="text-white font-medium relative group transition-colors duration-200"
+						>
+							{link.label}
+							<span className="block h-[2px] w-0 group-hover:w-full transition-all duration-300 bg-blue-500 absolute bottom-[-4px] left-0"></span>
+						</a>
+					</li>
+				))}
+			</ul>
+		</nav>
+	);
+}

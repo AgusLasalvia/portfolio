@@ -8,12 +8,12 @@ interface ProjectCardProps {
 	github?: string;
 	demo?: string;
 	status?: string;
-	className?: string;
+
 }
 
-export default function ProjectCard({title,description,image,stack,github,demo,status,className}: ProjectCardProps) {
-	
-	
+export default function ProjectCard({ title, description, image, stack, github, demo, status }: ProjectCardProps) {
+
+
 	const getStatusStyle = () => {
 		if (status === "Progress") return "bg-yellow-100 text-yellow-800 dark:bg-yellow-800 dark:text-yellow-200";
 		if (status === "Finished") return "bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-200";
@@ -21,7 +21,7 @@ export default function ProjectCard({title,description,image,stack,github,demo,s
 	};
 
 	return (
-		<div className={`rounded-2xl overflow-hidden shadow-md bg-gray-800 dark:text-white transition-all transform hover:scale-105 ${className}`}>
+		<div className={`rounded-2xl overflow-hidden shadow-md bg-gray-800 dark:text-white transition-all transform hover:scale-105 border-2 border-gray-600`}>
 			<Image src={image} alt={title} width={800} height={400} className="object-cover w-full h-48" />
 			<div className="p-4">
 				<div className="flex justify-between items-center mb-2">

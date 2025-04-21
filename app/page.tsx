@@ -61,20 +61,20 @@ const projects = [
 		title: "Recisaver Server",
 		description: "",
 		image: "/github.png",
-		stack: ["NodeJS", "Supabase","SQL", "Express", "Typescript", "Prisma"],
+		stack: ["NodeJS", "Supabase", "SQL", "Express", "Typescript", "Prisma"],
 		github: "https://github.com/AgusLasalvia/recisaver-server",
-		demo:"",
+		demo: "",
 		status: "Progress"
 	}
 ]
 
 export default function Home() {
 	return (
-		<div className=" flex justify-center flex-col items-center ">
+		<div className=" flex justify-center flex-col items-center mt-6">
 
 			{/* About me About */}
 			<ContentSection title="" id="">
-				<div className="flex flex-col justify-center items-center md:justify-start md:flex-row md:items-start w-[80%]  text-white ">
+				<div className="flex flex-col justify-center items-center md:justify-start md:flex-row md:items-start w-[80%] text-white ">
 					<figure className="flex items-center w-[100]">
 						<Image
 							src="/profile.jpg"
@@ -95,7 +95,10 @@ export default function Home() {
 				<div className="flex gap-10 mt-5 justify-center w-[80%] md:justify-start">
 					{social.map((link) => {
 						return (
-							<a href={link.href} className="text-white hover:text-blue-800 transition-all transform hover:scale-150 " key={link.icon}>
+							<a
+								href={link.href}
+								className="text-white hover:text-blue-800 transition-all transform hover:scale-150 "
+								key={link.icon}>
 								<i className={link.icon} />
 							</a>
 						)
@@ -108,7 +111,11 @@ export default function Home() {
 				<div className="grid md:grid-cols-2 md:w-[80%] w-[80%] mb-10 gap-5">
 					{skills.map((skill) => {
 						return (
-							<SkillCard key={skill.title} type={skill.title} description={skill.description} icon={skill.icon} />
+							<SkillCard
+								key={skill.title}
+								type={skill.title}
+								description={skill.description}
+								icon={skill.icon} />
 						)
 					})}
 				</div>
@@ -116,10 +123,20 @@ export default function Home() {
 			</ContentSection>
 
 			{/* Experience */}
-			<ContentSection title="Experience" id="experience">
+			<ContentSection
+				title="Experience"
+				id="experience">
+
 				{experience.map((exp) => {
 					return (
-						<ExperienceCard key={exp.role} role={exp.role} company={exp.company} period={exp.period} location={exp.location} description={exp.description} />
+						<ExperienceCard
+							key={exp.role}
+							role={exp.role}
+							company={exp.company}
+							period={exp.period}
+							location={exp.location}
+							description={exp.description}
+						/>
 					)
 				})}
 			</ContentSection>
@@ -131,7 +148,16 @@ export default function Home() {
 					{projects.map((project) => {
 
 						return (
-							<ProjectCard key={project.title} title={project.title} description={project.description} image={project.image} stack={project.stack} github={project.github} demo={project.demo} status={project.status} />
+							<ProjectCard
+								key={project.title}
+								title={project.title}
+								description={project.description}
+								image={project.image}
+								stack={project.stack}
+								github={project.github}
+								demo={project.demo}
+								status={project.status}
+							/>
 						)
 					})}
 				</div>

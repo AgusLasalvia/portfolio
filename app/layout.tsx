@@ -27,6 +27,7 @@ export default function RootLayout({
 		<html lang="en">
 			{/* Font from Google */}
 			<head>
+				<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
 				<link
 					rel="stylesheet"
@@ -42,8 +43,8 @@ export default function RootLayout({
 				className={`${geistSans.variable} ${geistMono.variable} flex flex-col items-center antialiased h-screen w-full `}
 			>
 
-					{/* <Navbar /> */}
-					{children}
+				<Navbar />
+				{children}
 			</body>
 		</html>
 	);
