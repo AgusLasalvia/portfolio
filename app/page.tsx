@@ -88,22 +88,22 @@ export default function Home() {
 
 			{/* About me About */}
 			< ContentSection title="" id="about" >
-			<div className="flex flex-col justify-center items-center md:flex-row md:items-start w-full md:w-[80%] text-white">
-	<figure className="flex items-center justify-center w-full md:w-[250px]">
-		<Image
-			src="/profile.jpg"
-			alt="Profile Picture"
-			width={250}
-			height={250}
-			className="rounded-2xl"
-		/>
-	</figure>
-	<div className="flex flex-col h-full w-full items-center md:items-start justify-center md:ml-5 mt-5 md:mt-0">
-		<p className="font-bold text-2xl w-full text-center md:text-start">Agustin Lasalvia</p>
-		<p className="text-gray-400 w-full text-center md:text-start">Full Stack Developer</p>
-		<p className="text-gray-400 w-full text-center md:text-start">Montevideo - Uruguay</p>
-	</div>
-</div>
+				<div className="flex flex-col justify-center items-center md:flex-row md:items-start w-full md:w-[80%] text-white">
+					<figure className="flex items-center justify-center w-full md:w-[250px]">
+						<Image
+							src="/profile.jpg"
+							alt="Profile Picture"
+							width={250}
+							height={250}
+							className="rounded-2xl"
+						/>
+					</figure>
+					<div className="flex flex-col h-full w-full items-center md:items-start justify-center md:ml-5 mt-5 md:mt-0">
+						<p className="font-bold text-2xl w-full text-center md:text-start">Agustin Lasalvia</p>
+						<p className="text-gray-400 w-full text-center md:text-start">Full Stack Developer</p>
+						<p className="text-gray-400 w-full text-center md:text-start">Montevideo - Uruguay</p>
+					</div>
+				</div>
 				<p className="text-white mt-5 text-center w-[90%] md:w-[80%] md:text-start ">I m a Junior Full-Stack Developer with a passion for creating and solving problems,
 					Ready for new adventures!
 				</p>
