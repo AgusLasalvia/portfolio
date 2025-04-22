@@ -1,7 +1,10 @@
+'use client'
+
 import ContentSection from "@/components/ContentSection";
 import ExperienceCard from "@/components/ExperienceCard";
 import ProjectCard from "@/components/ProjectCard";
 import SkillCard from "@/components/SkillCard";
+
 import Image from "next/image";
 
 const social = [
@@ -65,15 +68,25 @@ const projects = [
 		github: "https://github.com/AgusLasalvia/recisaver-server",
 		demo: "",
 		status: "Progress"
+	},
+	{
+		title: "Tambo",
+		description: "",
+		image: "/tambo.png",
+		stack: ["C#", ".NET", "MVC"],
+		github: "https://github.com/AgusLasalvia/Tambo",
+		demo: "",
+		status: "Finished"
 	}
 ]
 
 export default function Home() {
 	return (
-		<div className=" flex justify-center flex-col items-center mt-6">
+
+		<div className=" flex justify-center flex-col items-center mt-6" >
 
 			{/* About me About */}
-			<ContentSection title="" id="">
+			< ContentSection title="" id="about" >
 				<div className="flex flex-col justify-center items-center md:justify-start md:flex-row md:items-start w-[80%] text-white ">
 					<figure className="flex items-center w-[100]">
 						<Image
@@ -104,10 +117,10 @@ export default function Home() {
 						)
 					})}
 				</div>
-			</ContentSection>
+			</ContentSection >
 
 			{/* Skills */}
-			<ContentSection title="Skills" id="skills">
+			< ContentSection title="Skills" id="skills" >
 				<div className="grid md:grid-cols-2 md:w-[80%] w-[80%] mb-10 gap-5">
 					{skills.map((skill) => {
 						return (
@@ -120,48 +133,56 @@ export default function Home() {
 					})}
 				</div>
 
-			</ContentSection>
+			</ContentSection >
 
 			{/* Experience */}
-			<ContentSection
+			< ContentSection
 				title="Experience"
-				id="experience">
+				id="experience" >
 
-				{experience.map((exp) => {
-					return (
-						<ExperienceCard
-							key={exp.role}
-							role={exp.role}
-							company={exp.company}
-							period={exp.period}
-							location={exp.location}
-							description={exp.description}
-						/>
-					)
-				})}
-			</ContentSection>
+				{
+					experience.map((exp) => {
+						return (
+							<ExperienceCard
+								key={exp.role}
+								role={exp.role}
+								company={exp.company}
+								period={exp.period}
+								location={exp.location}
+								description={exp.description}
+							/>
+						)
+					})
+				}
+			</ContentSection >
 
 			{/* Projects */}
 
-			<ContentSection title="Projects" id="projects">
+			< ContentSection title="Projects" id="projects" >
 				<div className="grid md:grid-cols-2 md:w-[100%] w-[80%] mb-10 gap-5">
 					{projects.map((project) => {
+						const isTambo = project.title === "Tambo";
 
 						return (
-							<ProjectCard
+							<div
 								key={project.title}
-								title={project.title}
-								description={project.description}
-								image={project.image}
-								stack={project.stack}
-								github={project.github}
-								demo={project.demo}
-								status={project.status}
-							/>
+								className={isTambo ? "md:col-span-2" : ""}
+							>
+								<ProjectCard
+									title={project.title}
+									description={project.description}
+									image={project.image}
+									stack={project.stack}
+									github={project.github}
+									demo={project.demo}
+									status={project.status}
+								/>
+							</div>
 						)
 					})}
 				</div>
-			</ContentSection>
-		</div>
+			</ContentSection >
+		</div >
+
 	);
 }
