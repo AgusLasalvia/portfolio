@@ -17,9 +17,7 @@ const social = [
 const skills = [
 	{ title: "Typescript", description: "JavaScript with strong typing", icon: "/typescript.png" },
 	{ title: "NodeJS", description: "JavaScript runtime", icon: "/node.png" },
-
 	{ title: "MySQL", description: "Relational Database", icon: "/mysql.png" },
-
 	{ title: "React", description: "JavaScript Web Framework", icon: "/react.png" },
 	{ title: "C#", description: ".NET Language", icon: "/c-sharp.png" },
 	{ title: "Python", description: "General Purpose Language", icon: "/python.png" }
@@ -40,8 +38,8 @@ const projects = [
 		github: "https://github.com/AgusLasalvia/Congress-2023",
 		demo: "https://quitelcongress-showcase.netlify.app/",
 		status: "Finished"
-	}
-	,
+	},
+	
 	{
 		title: "SorvisLater",
 		description: "",
@@ -51,6 +49,7 @@ const projects = [
 		demo: "https://sorvislater.netlify.app/login",
 		status: "Finished"
 	},
+	
 	{
 		title: "Recisaver App",
 		description: "",
@@ -60,6 +59,7 @@ const projects = [
 		demo: "",
 		status: "Progress"
 	},
+
 	{
 		title: "Recisaver Server",
 		description: "",
@@ -69,6 +69,7 @@ const projects = [
 		demo: "",
 		status: "Progress"
 	},
+	
 	{
 		title: "Tambo",
 		description: "",
@@ -155,6 +156,7 @@ export default function Home() {
 					})
 				}
 			</ContentSection >
+			
 
 			{/* Projects */}
 
