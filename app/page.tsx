@@ -49,6 +49,24 @@ const projects = [
 		demo: "https://sorvislater.netlify.app/login",
 		status: "Finished"
 	},
+	{
+		title: "Tambo",
+		description: "",
+		image: "/tambo.png",
+		stack: ["C#", ".NET", "MVC"],
+		github: "https://github.com/AgusLasalvia/Tambo",
+		demo: "",
+		status: "Finished"
+	},
+	{
+		title: "YourDelivery",
+		description: "",
+		image: "/delivery.png",
+		stack: ["C#", ".NET", "MVC", "Entity Framework"],
+		github: "https://github.com/AgusLasalvia/YourDelivery",
+		demo: "",
+		status: "Finished"
+	},
 
 	{
 		title: "Recisaver App",
@@ -68,17 +86,9 @@ const projects = [
 		github: "https://github.com/AgusLasalvia/recisaver-server",
 		demo: "",
 		status: "Progress"
-	},
-
-	{
-		title: "Tambo",
-		description: "",
-		image: "/tambo.png",
-		stack: ["C#", ".NET", "MVC"],
-		github: "https://github.com/AgusLasalvia/Tambo",
-		demo: "",
-		status: "Finished"
 	}
+
+
 ]
 
 export default function Home() {
@@ -164,23 +174,19 @@ export default function Home() {
 			< ContentSection title="Projects" id="projects" >
 				<div className="grid md:grid-cols-2 md:w-[100%] w-[80%] mb-10 gap-5">
 					{projects.map((project) => {
-						const isTambo = project.title === "Tambo";
 
 						return (
-							<div
+
+							<ProjectCard
+								title={project.title}
+								description={project.description}
+								image={project.image}
+								stack={project.stack}
+								github={project.github}
+								demo={project.demo}
+								status={project.status}
 								key={project.title}
-								className={isTambo ? "md:col-span-2" : ""}
-							>
-								<ProjectCard
-									title={project.title}
-									description={project.description}
-									image={project.image}
-									stack={project.stack}
-									github={project.github}
-									demo={project.demo}
-									status={project.status}
-								/>
-							</div>
+							/>
 						)
 					})}
 				</div>

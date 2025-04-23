@@ -8,7 +8,7 @@ interface SkillCardProps {
 
 export default function SkillCard({ type, description, icon }: SkillCardProps) {
 	return (
-		<div className=" flex items-center justify-start w-[100%] h-[80px] bg-gray-800 rounded gap-3 mt-1 transition-all transform hover:scale-105 md:w-[225px]  ">
+		<div className=" flex items-center justify-start w-[100%] h-[80px] bg-gray-800 rounded gap-3 mt-1 transition-all transform hover:scale-105 md:w-[265px]  ">
 
 				<Image className=" ml-4 md:ml-5" src={icon} alt={type} width={32} height={32} />
 			<div>
