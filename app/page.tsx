@@ -34,7 +34,7 @@ const projects = [
 		title: "QUITEL 2023",
 		description: "",
 		image: "/quitel.png",
-		stack: ["React", "NodeJS", "MongoDB", "Typescript"],
+		stack: ["React", "NodeJS", "MongoDB", "Typescript","Express.JS"],
 		github: "https://github.com/AgusLasalvia/Congress-2023",
 		demo: "https://quitelcongress-showcase.netlify.app/",
 		status: "Finished"
