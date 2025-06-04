@@ -206,10 +206,10 @@ export default function Home() {
 
 			{/* Skills */}
 			<ContentSection title="Skills" id="skills">
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-5xl px-4 place-items-center">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
 					{skills.map((skill, index) => (
 						<AnimatedSection key={skill.title} delay={index * 0.1}>
-							<SkillCard {...skill} type="default" />
+							<SkillCard {...skill} type={skill.title} />
 						</AnimatedSection>
 					))}
 				</div>

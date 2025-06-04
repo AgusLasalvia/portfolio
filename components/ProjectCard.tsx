@@ -21,7 +21,7 @@ const ProjectCard = ({ title, description, image, stack, github, demo, status }:
 		<motion.div
 			whileHover={{ scale: 1.02 }}
 			whileTap={{ scale: 0.98 }}
-			className="relative bg-white/5 rounded-xl overflow-hidden backdrop-blur-sm group"
+			className="relative bg-white/5 rounded-xl overflow-hidden backdrop-blur-sm group min-h-[450px] flex flex-col"
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 		>
@@ -71,12 +71,12 @@ const ProjectCard = ({ title, description, image, stack, github, demo, status }:
 			</div>
 
 			{/* Content */}
-			<div className="p-6">
+			<div className="p-6 flex-1 flex flex-col">
 				<h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
-				<p className="text-gray-400 text-sm mb-4">{description || "Project description coming soon..."}</p>
+				<p className="text-gray-400 text-sm mb-4 flex-1">{description || "Project description coming soon..."}</p>
 
 				{/* Tech Stack */}
-				<div className="flex flex-wrap gap-2">
+				<div className="flex flex-wrap gap-2 mt-auto">
 					{stack.map((tech, index) => (
 						<span
 							key={index}

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://agustinlasalvia.dev/sitemap.xml 
+Sitemap: https://aguslasalvia.vercel.app/sitemap.xml 

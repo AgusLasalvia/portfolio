@@ -15,20 +15,20 @@ const SkillCard = ({ type, description, icon, projects = [] }: SkillCardProps) =
 		<motion.div
 			whileHover={{ scale: 1.05 }}
 			whileTap={{ scale: 0.95 }}
-			className="bg-white/5 p-3 rounded-lg backdrop-blur-sm hover:bg-white/10 transition-all cursor-pointer group relative w-full"
+			className="bg-white/5 p-6 rounded-lg backdrop-blur-sm hover:bg-white/10 transition-all cursor-pointer group relative w-[280px] md:max-w-[350px] md:w-full mx-auto md:h-[90px]"
 		>
-			<div className="flex items-center gap-3">
-				<div className="w-10 h-10 relative">
+			<div className="flex items-start gap-4">
+				<div className="w-12 h-12 relative bg-white/5 rounded-lg p-2">
 					<Image
 						src={icon}
-						alt="Skill Icon"
+						alt={`${type} Icon`}
 						fill
 						className="object-contain"
 					/>
 				</div>
-				<div className="flex-1">
-					<h3 className="text-white font-semibold">{type}</h3>
-					<p className="text-gray-400 text-xs">{description}</p>
+				<div>
+					<h3 className="text-white text-lg font-semibold mb-2">{type}</h3>
+					<p className="text-gray-400 text-sm">{description}</p>
 				</div>
 			</div>
 
