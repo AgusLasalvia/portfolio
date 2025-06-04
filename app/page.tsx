@@ -55,7 +55,7 @@ const projects = [
 		image: "/tambo.png",
 		stack: ["C#", ".NET", "MVC"],
 		github: "https://github.com/AgusLasalvia/Tambo",
-		demo: "",
+		demo: "https://tambo.onrender.com/",
 		status: "Finished"
 	},
 	{
