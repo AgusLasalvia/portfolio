@@ -70,11 +70,6 @@ const experience = [
 		period: "2021 - Present",
 		location: "Montevideo - Uruguay",
 		description: "Responsibilities. Properly configure and install the hardware and software on the relevant devices, and configure the software and drivers as necessary. Ensure proper maintenance and repair of all IT equipment and accessories, including routers and printers, etc.",
-		achievements: [
-			"Reduced system downtime by 30% through proactive maintenance",
-			"Implemented new IT protocols improving efficiency",
-			"Successfully managed and resolved over 500 technical support tickets"
-		]
 	},
 	{
 		role: "Backend Developer",
@@ -82,11 +77,6 @@ const experience = [
 		period: "2023",
 		location: "Montevideo - Uruguay",
 		description: "Responsible for the design, development, implementation, and updating of various backend systems. Utilized development tools and programming languages such as Node.js for backend logic and MongoDB for data storage, including proper data validation.",
-		achievements: [
-			"Developed and deployed 3 successful backend systems",
-			"Improved API response times by 40%",
-			"Implemented robust security measures and data validation"
-		]
 	}
 ]
 
