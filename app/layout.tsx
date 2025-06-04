@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import { Analytics } from '@vercel/analytics/react';
 import { Geist, Geist_Mono } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 import Navbar from "@/components/Navbar";
+import ParticlesBackground from "@/components/ParticlesBackground";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,8 +17,32 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: "My 2025 Web Portfolio",
-	description: "Personal Web Portfolio",
+	title: "Agustin Lasalvia | Full Stack Developer",
+	description: "Full Stack Developer specializing in TypeScript, Node.js, React, and .NET. View my projects, skills, and experience.",
+	keywords: ["Full Stack Developer", "TypeScript", "Node.js", "React", "C#", ".NET", "MongoDB", "MySQL"],
+	authors: [{ name: "Agustin Lasalvia" }],
+	openGraph: {
+		type: "website",
+		locale: "en_US",
+		url: "https://agustinlasalvia.dev",
+		siteName: "Agustin Lasalvia Portfolio",
+		title: "Agustin Lasalvia | Full Stack Developer",
+		description: "Full Stack Developer specializing in TypeScript, Node.js, React, and .NET",
+		images: [
+			{
+				url: "/og-image.jpg",
+				width: 1200,
+				height: 630,
+				alt: "Agustin Lasalvia Portfolio"
+			}
+		]
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Agustin Lasalvia | Full Stack Developer",
+		description: "Full Stack Developer specializing in TypeScript, Node.js, React, and .NET",
+		images: ["/og-image.jpg"],
+	}
 };
 
 export default function RootLayout({
@@ -24,7 +51,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			{/* Font from Google */}
 			<head>
 				<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -40,11 +67,14 @@ export default function RootLayout({
 				/>
 			</head>
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} flex flex-col items-center antialiased h-screen w-full `}
+				className={`${geistSans.variable} ${geistMono.variable} flex flex-col items-center antialiased h-screen w-full relative`}
 			>
-
-				<Navbar />
-				{children}
+				<ThemeProvider attribute="class" defaultTheme="dark">
+					<ParticlesBackground />
+					<Navbar />
+					{children}
+					<Analytics />
+				</ThemeProvider>
 			</body>
 		</html>
 	);

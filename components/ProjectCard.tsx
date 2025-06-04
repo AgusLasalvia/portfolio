@@ -1,54 +1,60 @@
+'use client';
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 interface ProjectCardProps {
 	title: string;
 	description: string;
 	image: string;
 	stack: string[];
-	github?: string;
-	demo?: string;
-	status?: string;
-
+	github: string;
+	demo: string;
+	status: string;
 }
 
-export default function ProjectCard({ title, description, image, stack, github, demo, status }: ProjectCardProps) {
-
-
-	const getStatusStyle = () => {
-		if (status === "Progress") return "bg-yellow-100 text-yellow-800 dark:bg-yellow-800 dark:text-yellow-200";
-		if (status === "Finished") return "bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-200";
-		return "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-300";
-	};
+const ProjectCard = ({ title, description, image, stack, github, demo, status }: ProjectCardProps) => {
+	const [isHovered, setIsHovered] = useState(false);
 
 	return (
-		<div className={`rounded-2xl overflow-hidden shadow-md bg-gray-800 dark:text-white transition-all transform hover:scale-105 border-2 border-gray-600`}>
-			<Image src={image} alt={title} width={800} height={400} className="object-cover w-full h-48" />
-			<div className="p-4">
-				<div className="flex justify-between items-center mb-2">
-					<h3 className="text-xl font-bold">{title}</h3>
-					{status && (
-						<span className={`text-xs px-3 py-1 rounded-full font-semibold ${getStatusStyle()}`}>
-							{status}
-						</span>
-					)}
-				</div>
-				<p className="text-gray-400 text-sm">{description}</p>
-				<div className="flex flex-wrap gap-2 mt-3">
-					{stack.map((tech) => (
-						<span key={tech} className="text-xs bg-blue-100 dark:bg-blue-950 text-blue-500 px-2 py-1 rounded-md">
-							{tech}
-						</span>
-					))}
-				</div>
-				<div className="flex gap-3 mt-4 flex-wrap justify-center">
+		<motion.div
+			whileHover={{ scale: 1.02 }}
+			whileTap={{ scale: 0.98 }}
+			className="relative bg-white/5 rounded-xl overflow-hidden backdrop-blur-sm group"
+			onMouseEnter={() => setIsHovered(true)}
+			onMouseLeave={() => setIsHovered(false)}
+		>
+			{/* Status Badge */}
+			<div className="absolute top-4 right-4 z-20">
+				<span className={`px-3 py-1 rounded-full text-xs font-medium ${status === "Finished" ? "bg-green-500/20 text-green-400" : "bg-yellow-500/20 text-yellow-400"
+					}`}>
+					{status}
+				</span>
+			</div>
+
+			{/* Image Container */}
+			<div className="relative h-48 w-full">
+				<Image
+					src={image}
+					alt={title}
+					fill
+					className="object-cover transition-transform duration-300 group-hover:scale-110"
+				/>
+				{/* Overlay on hover */}
+				<motion.div
+					initial={false}
+					animate={{ opacity: isHovered ? 1 : 0 }}
+					className="absolute inset-0 bg-black/60 flex items-center justify-center gap-4"
+				>
 					{github && (
 						<a
 							href={github}
 							target="_blank"
 							rel="noopener noreferrer"
-							className="text-sm px-3 py-1 rounded-full border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition"
+							className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-colors"
 						>
-							GitHub
+							<i className="fab fa-github text-white text-xl" />
 						</a>
 					)}
 					{demo && (
@@ -56,13 +62,33 @@ export default function ProjectCard({ title, description, image, stack, github, 
 							href={demo}
 							target="_blank"
 							rel="noopener noreferrer"
-							className="text-sm px-3 py-1 rounded-full border border-green-500 text-green-500 hover:bg-green-500 hover:text-white transition"
+							className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-colors"
 						>
-							Live Demo
+							<i className="fas fa-external-link-alt text-white text-xl" />
 						</a>
 					)}
+				</motion.div>
+			</div>
+
+			{/* Content */}
+			<div className="p-6">
+				<h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
+				<p className="text-gray-400 text-sm mb-4">{description || "Project description coming soon..."}</p>
+
+				{/* Tech Stack */}
+				<div className="flex flex-wrap gap-2">
+					{stack.map((tech, index) => (
+						<span
+							key={index}
+							className="px-3 py-1 bg-white/10 rounded-full text-xs text-white"
+						>
+							{tech}
+						</span>
+					))}
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
-}
+};
+
+export default ProjectCard;
