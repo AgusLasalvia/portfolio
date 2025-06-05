@@ -34,7 +34,7 @@ const ProjectCard = ({ title, description, image, stack, github, demo, status }:
 			</div>
 
 			{/* Image Container */}
-			<div className="relative h-48 w-full">
+			<div className="relative h-52 w-full overflow-hidden">
 				<Image
 					src={image}
 					alt={title}
@@ -52,7 +52,7 @@ const ProjectCard = ({ title, description, image, stack, github, demo, status }:
 							href={github}
 							target="_blank"
 							rel="noopener noreferrer"
-							className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-colors"
+							className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-colors w-12 h-12 flex items-center justify-center"
 						>
 							<i className="fab fa-github text-white text-xl" />
 						</a>
@@ -62,7 +62,7 @@ const ProjectCard = ({ title, description, image, stack, github, demo, status }:
 							href={demo}
 							target="_blank"
 							rel="noopener noreferrer"
-							className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-colors"
+							className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-colors w-12 h-12 flex items-center justify-center"
 						>
 							<i className="fas fa-external-link-alt text-white text-xl" />
 						</a>
