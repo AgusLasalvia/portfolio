@@ -20,7 +20,7 @@ const SkillCard = ({
     <motion.div
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="bg-white/5 p-6 rounded-lg backdrop-blur-sm hover:bg-white/10 transition-all cursor-pointer group relative w-[480px] md:max-w-[350px] md:w-full mx-auto md:h-[90px]"
+      className="bg-white/5 p-6 rounded-lg backdrop-blur-sm hover:bg-white/10 transition-all cursor-pointer group relative w-[90%] md:max-w-[350px] md:w-full mx-auto md:h-[90px]"
     >
       <div className="flex items-start gap-4">
         <div className="w-12 h-12 relative bg-white/5 rounded-lg p-2">
