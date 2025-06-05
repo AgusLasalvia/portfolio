@@ -21,9 +21,10 @@ const ProjectCard = ({ title, description, image, stack, github, demo, status }:
 		<motion.div
 			whileHover={{ scale: 1.02 }}
 			whileTap={{ scale: 0.98 }}
-			className="relative bg-white/5 rounded-xl overflow-hidden backdrop-blur-sm group min-h-[450px] flex flex-col"
+			className="relative bg-white/5 rounded-xl overflow-hidden backdrop-blur-sm group min-h-[450px] flex flex-col w-full md:max-w-[400px]"
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
+
 		>
 			{/* Status Badge */}
 			<div className="absolute top-4 right-4 z-20">
