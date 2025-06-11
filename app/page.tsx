@@ -127,7 +127,7 @@ const projects = [
     image: "/delivery.png",
     stack: ["C#", ".NET", "MVC", "Entity Framework"],
     github: "https://github.com/AgusLasalvia/YourDelivery",
-    demo: "",
+    demo: "https://yourdelivery.onrender.com/",
     status: "Finished",
   },
 
